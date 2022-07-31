@@ -14,18 +14,15 @@ language_translator = LanguageTranslatorV3(version='2018-05-01', authenticator=a
 language_translator.set_service_url(url)
 
 #this function converts english text to french
-def englishToFrench(englishText):
+def english_to_french(englishText):
     #write the code here
     translation_fr = language_translator.translate(text= englishText, model_id='en-fr').get_result()
-    
     frenchText =translation_fr['translations'][0]['translation']
-
     return frenchText
 
 #this function conversts french text from the previous function to english
-def frenchToEnglish(frenchText):
+def french_to_english(frenchText):
     #write the code here
     translation_eng = language_translator.translate(text=frenchText ,model_id='fr-en').get_result()
-    
     englishText = translation_eng['translations'][0]['translation']
     return englishText
